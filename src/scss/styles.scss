@@ -1,2 +1,97 @@
 // Here goes your CSS
-@import 'layout/main';
+@import "layout/main";
+
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//login form styling
+.login-form {
+  display: flex;
+  position: relative;
+  background-color: white;
+  flex-direction: column;
+  padding: 2.5rem;
+  border-radius: 5px;
+  width: 250px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  //header
+  & header {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    & h1 {
+      margin: 0 0 1rem 0;
+    }
+  }
+  //inputs
+  &__input {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid grey;
+    transition: border-color 0.1s ease-in-out;
+    &:focus {
+      outline: none;
+      border-color: black;
+    }
+    &[type="submit"] {
+      text-transform: uppercase;
+      text-align: center;
+      color: white;
+      background-color: black;
+      border: none;
+      margin: 0;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+  //checkbox
+  &__checkbox-label {
+    display: flex;
+    cursor: pointer;
+    margin: 0 0 2rem 0;
+    user-select: none;
+    & input {
+      display: none;
+      &:checked ~ span i {
+        opacity: 1;
+      }
+    }
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid grey;
+      margin-right: 0.5rem;
+      padding: 1px;
+      & i {
+        transition: opacity 0.1s ease-in-out;
+        opacity: 0;
+      }
+    }
+  }
+  //close button
+  &__close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+}
