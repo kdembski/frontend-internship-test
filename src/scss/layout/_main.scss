@@ -22,12 +22,13 @@ body {
   background: transparent;
   border: 0;
   cursor: pointer;
-  font-family: "Lobster", cursive;
+  font-family: 'Lobster', cursive;
   font-size: 42px;
   height: 60px;
   outline: none;
   padding: 0 20px;
-  transition: transform 0.5s ease, opacity 0.15s ease-in-out;
+  transition: transform .5s ease;
+
   &:hover {
     transform: scale(1.15);
   }

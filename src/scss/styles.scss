@@ -21,6 +21,7 @@
     }
   }
 }
+
 //login form styling
 .login-form {
   display: flex;
@@ -108,7 +109,17 @@
     cursor: pointer;
   }
 }
+
+//button main hidden
 .btn-main_hidden {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
+}
+
+//success message
+.success-message {
+  font-family: "Lobster", cursive;
+  font-size: 42px;
+  &_hidden {
+    display: none;
+  }
 }
