@@ -19,34 +19,55 @@
   </head>
   <body>
     <section class="main">
-      <button id="show-popup-form" class="btn btn-main">Click me!</button>
-      <!-- Display success message below -->
+      <button
+        id="show-popup-form"
+        class="btn btn-main"
+        onclick="togglePopup(); toggleShowFromButton()"
+      >
+        Click me!
+      </button>
+      <!-- success message -->
     </section>
-    <div class="popup">
+    <div class="popup popup_hidden">
       <!-- login form -->
-      <form class="login-form">
+      <form class="login-form" onsubmit="loginFormSubmited(event)">
         <!-- login form header -->
         <header>
           <h1>Login</h1>
         </header>
         <!-- login form email input -->
-        <input class="login-form__input" type="email" placeholder="E-mail" />
+        <input
+          class="login-form__input"
+          type="email"
+          placeholder="E-mail"
+          required
+        />
         <!-- login form password input -->
         <input
           class="login-form__input"
           type="password"
           placeholder="Password"
+          required
         />
-        <!-- login form checkbox -->
+        <!-- login form terms checkbox -->
         <label class="login-form__checkbox-label">
-          <input type="checkbox" />
-          <span><i class="fas fa-check"></i></span>
+          <input
+            type="checkbox"
+            id="terms-checkbox"
+            onchange="termsCheckboxChanged()"
+          />
+          <span id="terms-checkmark"><i class="fas fa-check"></i></span>
           I agree to terms & conditions.
         </label>
         <!-- login form submit button -->
         <input class="login-form__input" type="submit" value="submit" />
         <!-- login form close button -->
-        <div class="login-form__close-btn"><i class="fas fa-times"></i></div>
+        <div
+          class="login-form__close-btn"
+          onclick="togglePopup(); toggleShowFromButton()"
+        >
+          <i class="fas fa-times"></i>
+        </div>
       </form>
     </div>
     <script src="js/index.min.js" charset="utf-8"></script>

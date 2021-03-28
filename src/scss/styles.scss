@@ -10,6 +10,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: z-index 0.25s step-start;
+  z-index: 1;
+  &_hidden {
+    z-index: -1;
+    transition: z-index 0.25s step-end;
+    & .login-form {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  }
 }
 //login form styling
 .login-form {
@@ -21,6 +31,7 @@
   border-radius: 5px;
   width: 250px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
   //header
   & header {
     font-family: "Lobster", cursive;
@@ -72,6 +83,8 @@
       border: 2px solid grey;
       margin-right: 0.5rem;
       padding: 1px;
+      transition: background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
       & i {
         transition: opacity 0.1s ease-in-out;
         opacity: 0;
@@ -94,4 +107,8 @@
     width: 30px;
     cursor: pointer;
   }
+}
+.btn-main_hidden {
+  opacity: 0;
+  pointer-events: none;
 }
