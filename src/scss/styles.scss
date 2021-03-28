@@ -38,7 +38,7 @@
     font-family: "Lobster", cursive;
     text-align: center;
     & h1 {
-      margin: 0 0 1rem 0;
+      margin: 0 0 1.5rem 0;
     }
   }
   //inputs
@@ -63,6 +63,26 @@
       &:hover {
         background-color: $secondary-color;
       }
+    }
+  }
+  //error
+  &__error {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    min-height: 38px;
+    cursor: pointer;
+    top: 2rem;
+    left: 2.5rem;
+    width: calc(100% - 7rem);
+    padding: 0.5rem 1rem;
+    color: rgb(200, 0, 0);
+    background: rgb(255, 180, 180);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    &_hidden {
+      transform: translateY(-25%);
+      opacity: 0;
     }
   }
   //checkbox

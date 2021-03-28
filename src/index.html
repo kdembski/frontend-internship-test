@@ -19,11 +19,7 @@
   </head>
   <body>
     <section class="main">
-      <button
-        id="show-popup-form"
-        class="btn btn-main"
-        onclick="togglePopup(); toggleShowFromButton()"
-      >
+      <button id="show-popup-form" class="btn btn-main">
         Click me!
       </button>
       <!-- success message -->
@@ -33,7 +29,11 @@
     </section>
     <div class="popup popup_hidden">
       <!-- login form -->
-      <form class="login-form" onsubmit="loginFormSubmited(event)">
+      <form class="login-form" novalidate="true">
+        <div
+          class="login-form__error login-form__error_hidden"
+          id="form-error"
+        ></div>
         <!-- login form header -->
         <header>
           <h1>Login</h1>
@@ -43,32 +43,25 @@
           class="login-form__input"
           type="email"
           placeholder="E-mail"
-          required
+          id="email-input"
         />
         <!-- login form password input -->
         <input
           class="login-form__input"
           type="password"
           placeholder="Password"
-          required
+          id="password-input"
         />
         <!-- login form terms checkbox -->
         <label class="login-form__checkbox-label">
-          <input
-            type="checkbox"
-            id="terms-checkbox"
-            onchange="termsCheckboxChanged()"
-          />
+          <input type="checkbox" id="terms-checkbox" />
           <span id="terms-checkmark"><i class="fas fa-check"></i></span>
           I agree to terms & conditions.
         </label>
         <!-- login form submit button -->
         <input class="login-form__input" type="submit" value="submit" />
         <!-- login form close button -->
-        <div
-          class="login-form__close-btn"
-          onclick="togglePopup(); toggleShowFromButton()"
-        >
+        <div class="login-form__close-btn" id="close-popup-form">
           <i class="fas fa-times"></i>
         </div>
       </form>
